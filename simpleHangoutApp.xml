@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<!-- CC-NC-BY-SA 3.0 -->
+  <ModulePrefs title="The Resistance">
+    <Require feature="rpc" />
+    <Require feature="views" />
+  </ModulePrefs>
+  <Content type="html"><![CDATA[     
+]]>
+</Content>
+</Module>
