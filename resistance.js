@@ -1,3 +1,5 @@
+goog.require('goog.array');
+
 angular.module('Resistance', []).filter('selectable', function() {
  	      return function(roleCards) {
 		  var result = {};
@@ -172,7 +174,7 @@ function ResistanceCtrl($scope, $filter) {
       }
     }
 
-    //goog.array.shuffle(activeRoles);
+    goog.array.shuffle(activeRoles);
   	var roles = {};
   	for (var i = 0; i < activeRoles.length; i++) {
   	  roles[activeRoles[i]] = $scope.participants[i].id;
