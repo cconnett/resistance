@@ -1,3 +1,5 @@
+goog.provide('resistance');
+
 goog.require('goog.array');
 
 angular.module('Resistance', []).filter('selectable', function() {
