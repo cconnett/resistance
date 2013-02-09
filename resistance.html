@@ -1,3 +1,4 @@
+cat <<HEADER
 <html ng-app="Resistance">
 <head>
   <!--link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"-->
@@ -8,7 +9,12 @@
 
   <!-- <script src="closure-library/closure/goog/base.js"></script> -->
   <!-- <script src="resistance.js"></script> -->
-  <script src="js.js"></script>
+  <script>
+    window.CLOSURE_NO_DEPS=true;
+HEADER
+cat
+cat << FOOTER
+  </script>
 </head>
 
 <body ng-controller="ResistanceCtrl">
@@ -46,3 +52,4 @@
   </div>
 </body>
 </html>
+FOOTER

@@ -1,3 +1,4 @@
+cat <<HEADER
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 <!-- CC-NC-BY-SA 3.0 -->
@@ -5,7 +6,11 @@
     <Require feature="rpc" />
     <Require feature="views" />
   </ModulePrefs>
-  <Content type="html"><![CDATA[     
+  <Content type="html"><![CDATA[
+HEADER
+cat
+cat <<FOOTER
 ]]>
 </Content>
 </Module>
+FOOTER

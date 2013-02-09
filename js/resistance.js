@@ -3,16 +3,16 @@ goog.provide('resistance');
 goog.require('goog.array');
 
 angular.module('Resistance', []).filter('selectable', function() {
- 	      return function(roleCards) {
-		  var result = {};
-		  for (role in roleCards) {
-		      if (roleCards[role].selectable) {
-			  result[role] = roleCards[role];
-		      }
-		  }
-		  return result;
-	      };
-	  });
+  return function(roleCards) {
+    var result = {};
+    for (role in roleCards) {
+      if (roleCards[role].selectable) {
+	result[role] = roleCards[role];
+      }
+    }
+    return result;
+  };
+});
 
 function ResistanceCtrl($scope, $filter) {
   var commonEvilKnowledge = {

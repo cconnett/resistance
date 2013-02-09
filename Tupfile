@@ -1,0 +1,7 @@
+.gitignore
+: js/resistance.js |> js/closure-library/closure/bin/build/closurebuilder.py \
+  --root=js --namespace="resistance" \
+  --compiler_flags="--compilation_level=WHITESPACE_ONLY" \
+  --output_mode=compiled --compiler_jar=compiler.jar > %o |> js.js
+: resistance.html js.js |> bash resistance.html < js.js > %o |> app.html
+: app.html |> bash makeApp.sh < %f > %o |> app.xml
