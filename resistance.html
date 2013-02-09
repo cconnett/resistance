@@ -21,29 +21,28 @@
     </li>
   </ul>
   <label for="numPlayers">Number of players:</label>
-  <input type="number" min="5" max="10" 
-	 ng-model="numPlayers" ng-init="numPlayers=7"
-	 name="numPlayers">
+  <input type="number" min="5" max="10"
+         ng-model="numPlayers" ng-init="numPlayers=7"
+         name="numPlayers">
 
   <a ng-click="newGame()">New Game</a><br>
   <a ng-click="makeMeGood()">Make me good</a>
   <div id="participantsDiv">
     <ul>
-	  <li ng-repeat="participant in participants">
-	    <span ng-hide="participant.person">A person not running this app</span>
-	    <span ng-show="participant.person">[{{participant.id}}] {{participant.person.displayName}}</span>
-	  </li>
+      <li ng-repeat="participant in participants">
+        <span ng-hide="participant.person">A person not running this app</span>
+        <span ng-show="participant.person">[{{participant.id}}] {{participant.person.displayName}}</span>
+      </li>
     </ul>
     <ul>
       <li ng-repeat="role in activeRoles">{{role}}{{sees(role)}}</li>
     </ul>
     <table>
       <tr ng-repeat="role in activeRoles">
-	<td>{{role}}</td><td>can see</td>
-	<td ng-repeat="appearance in sees(role)">{{appearance}}</td>
+        <td>{{role}}</td><td>can see</td>
+        <td ng-repeat="appearance in sees(role)">{{appearance}}</td>
       </tr>
     </table>
   </div>
-  <hr>
 </body>
 </html>
