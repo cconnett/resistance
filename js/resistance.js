@@ -1,7 +1,11 @@
-goog.provide('resistance');
+goog.provide('resistance.ResistanceCtrl');
 
 goog.require('goog.array');
 
+/**
+ * Filter for role cards that are optional in a game of Resistance, and
+ * should be selectable in the UI.
+ */
 angular.module('Resistance', []).filter('selectable', function() {
   return function(roleCards) {
     var result = {};
@@ -14,7 +18,11 @@ angular.module('Resistance', []).filter('selectable', function() {
   };
 });
 
-function ResistanceCtrl($scope, $filter) {
+/**
+ * Controller for the Resistance app.
+ * @export
+ */
+resistance.ResistanceCtrl = ['$scope', '$filter', function($scope, $filter) {
   var commonEvilKnowledge = {
     'mordred': 'spy',
     'morgana': 'spy',
@@ -189,6 +197,13 @@ function ResistanceCtrl($scope, $filter) {
     $scope.activeRoles = activeRoles;
   };
 
+  /**
+   * Returns an array of other roles in the game that the given role can
+   * see.
+   * @param {String} role The role requesting visibility information.
+   * @return {Array.<String>} The list of roles that the given role can
+   *     see.
+   */
   $scope.sees = function(role) {
       var card = $scope.roleCards[role];
       var result = [];
@@ -205,7 +220,7 @@ function ResistanceCtrl($scope, $filter) {
   };
 
   $scope.makeMeGood = function() {
-    gapi.hangout.av.setAvatar(gapi.hangout.getParticipants()[0].id, 
+    gapi.hangout.av.setAvatar(gapi.hangout.getParticipants()[0].id,
                               'http://connett.net/steamstatus/ingame.png');
   };
-}
+}];
