@@ -159,9 +159,8 @@ resistance.ResistanceCtrl = ['$scope', '$filter', function($scope, $filter) {
     var activeRoles = [], card;
 
     for (role in $scope.roleCards) {
-      console.log(role);
       card = $scope.roleCards[role];
-	    if (card.selected) {
+      if (card.selected) {
         activeRoles.push(role);
         if (card.side == 'evil') {
           evilCount -= 1;
@@ -185,9 +184,9 @@ resistance.ResistanceCtrl = ['$scope', '$filter', function($scope, $filter) {
     }
 
     goog.array.shuffle(activeRoles);
-  	var roles = {};
-  	for (var i = 0; i < activeRoles.length; i++) {
-  	  roles[activeRoles[i]] = $scope.participants[i].id;
+    var roles = {};
+    for (var i = 0; i < activeRoles.length; i++) {
+      roles[activeRoles[i]] = $scope.participants[i].id;
       roles[$scope.participants[i].id] = activeRoles[i];
     }
     $scope.roles = roles;
