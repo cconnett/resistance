@@ -1,4 +1,3 @@
-cat <<HEADER
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 <!-- CC-NC-BY-SA 3.0 -->
@@ -7,10 +6,7 @@ cat <<HEADER
     <Require feature="views" />
   </ModulePrefs>
   <Content type="html"><![CDATA[
-HEADER
-cat
-cat <<FOOTER
+CONTENT
 ]]>
 </Content>
 </Module>
-FOOTER

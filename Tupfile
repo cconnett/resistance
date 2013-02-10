@@ -3,5 +3,7 @@
   --root=js --namespace="resistance" \
   --compiler_flags="--compilation_level=WHITESPACE_ONLY" \
   --output_mode=compiled --compiler_jar=compiler.jar > %o |> js.js
-: resistance.html js.js |> bash resistance.html < js.js > %o |> app.html
-: app.html |> bash makeApp.sh < %f > %o |> app.xml
+#: resistance.html js.js |> bash resistance.html < js.js > %o |> app.html
+
+: resistance.html | js.js |> bash ripscript.sh < %f > %o |> _combined.html
+: _combined.html | appTemplate.xml |> bash sub.sh CONTENT %f < appTemplate.xml > %o |> app.xml
